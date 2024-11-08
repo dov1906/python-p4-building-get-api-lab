@@ -41,7 +41,7 @@ def baked_goods_by_price():
     baked_goods_list = [good.to_dict() for good in baked_goods]
     response = make_response(jsonify(baked_goods_list), 200)
     return response
-
+    
 @app.route('/baked_goods/most_expensive')
 def most_expensive_baked_good():
     baked_good = BakedGood.query.order_by(desc(BakedGood.price)).first()
